@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Simple landing Page</title>
+<script type="text/javascript"></script>
+<style type="text/css">
+    *{
+        padding: 11px;
+        margin: 0;
+        box-sizing: border-box;
+        clear: both;
+        background-image: url("");
+
+    }
+    header{
+        width: 100%;
+        height: 100vh;
+        background:linear-gradient(rgba(238, 213, 89, 0.8),rgba(163, 237, 202, 0.2)),url('https://picsum.photos/id/29/4000/2670?grayscale&blur=2') ;
+        background-size: cover;
+        
+
+    }
+    nav{
+        width: 100%;
+        height: 100%;
+    color: black;
+        display: flex;
+        justify-content: space-around;
+        align-items:normal;
+        clear: both;
+    }
+    .logo{
+        font-size: 2em;
+        letter-spacing: 2px;
+
+    }
+    .menu a{
+        text-decoration:solid ;
+        color: rgb(12, 8, 43);
+        padding: 20px 20px;
+        font-size: 20px;
+        font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+        position: relative;
+        border: double;
+        border-radius: 10px ;
+        border-color: brown;
+        background-color: rgb(153, 98, 204);
+        clear: both;
+    }
+    .menu a::before{
+        content: '';
+        position: absolute;
+        top: 0;
+        top: 0%;
+        left: 0%;
+        width: 0%;
+        height: 100%;
+        border-bottom: 2px solid indigo;
+        transition:0.5s linear;
+    }
+    .menu a:hover::before{
+        width: 90%;
+    }
+    .login a{
+        text-decoration:solid dashed;
+        color: rgb(12, 8, 43);
+        padding: 20px 20px;
+        font-size: 20px;
+        font-family:cursive;
+        background: indianred;
+        border-radius: 30px;
+        transition: 1.16s;
+    }
+    .login a:hover{
+        background: rgb(108, 103, 7);
+        border: 1px solid rgb(213, 100, 13);
+    }
+    .h-txt{
+        max-width: 600px;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-10%,-10%);
+        text-align: center;
+        color: rgb(68, 5, 53);
+        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        font-style: italic;
+        font-weight: bold;
+        clear: both;
+    }
+    .h-txt span{
+        letter-spacing: 6px;
+
+
+    }
+    .h-txt h1{
+        font-size: 3.5em;
+
+    }
+    .h-txt a{
+        text-decoration: wavy;
+        background: indianred;
+        color: yellow;
+        padding: 10px 20px;
+        letter-spacing: 5px;
+        transition: 0.10s;
+
+
+    }
+    .h-txt a:hover{
+        background:rgb(17, 38, 225);
+        border: 1px solid rgb(16, 106, 4);
+
+    }
+    .h-txt2{
+        max-width:200px;
+        position: absolute;
+        top: 30%;
+        left: 30%;
+        transform: translate(-40%,-10%);
+        text-align:start;
+        color: rgb(68, 5, 53);
+        font-family:cursive;
+        font-style: italic;
+        font-weight: bold;
+        clear: both;
+        font-size: large;
+    }
+
+</style>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">
+                WANDERER
+            </div>
+            <div class="menu">
+                <a href="#"> Home</a>
+                <a href="#">COUNTRIES</a>
+                <a href="#">Best offer</a>
+                <a href="#">MORE</a>
+                <a href="#">CONTACT</a>
+            </div>
+            <div class="login">
+                <a href="#">LOGIN</a>
+            </div>
+            <div class="h-txt2"> 
+                <h3 >ABOUT US</h3>
+                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quas ad aut laudantium ipsam eum non iste fugiat deserunt impedit quasi tempore ipsa provident vel, aspernatur dignissimos qui alias accusantium! Illum.</div>
+        </nav>
+        <section class="h-txt">
+            <span>BEINVENIDA</span>
+            <h1>Wanderer transport Agency</h1>
+            <br>
+            <a href="#"> Start your journey </a>
+    
+    
+       </section>
+       
+        
+
+    
+
+    </header>
+    
+</body>
+</html>
