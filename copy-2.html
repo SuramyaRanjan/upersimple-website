@@ -1,0 +1,494 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Graduation Student Landing Page</title>
+    <style>
+        
+        *{
+            font-family: cursive;
+        }
+
+
+        body, h1, h2, h3, p, ul, li {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: rgb(144, 144, 213);
+            padding: 20px;
+            animation: rainbowAnimation 20s infinite linear;
+            color: #333;
+        }
+
+        header{
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    animation: rainbowAnimation 10s infinite linear;
+}
+
+
+        
+        @keyframes rainbowAnimation {
+            0% {
+                background-position: 0% 50%;
+            }
+            50% {
+                background-position: 100% 50%;
+            }
+            100% {
+                background-position: 0% 50%;
+            }
+        }
+
+        header{
+    background: linear-gradient(45deg, #0a67df, #1c6b9f, #2d65b8, #299276, #1bac8a, #2ba72b, #51b72f);
+    background-size: 1400% 1400%;
+
+    color: #fff;
+    text-align: center;
+    padding: 50px 0;
+    position: relative;
+}
+
+
+
+        header h1 {
+            font-size: 2em;
+            margin-bottom: 10px;
+        }
+
+        header p {
+            font-size: 1.2em;
+            margin-bottom: 20px;
+        }
+
+        .profile-pic {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+        }
+
+        .profile-pic img {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            border: 2px solid #fff;
+        }
+
+        /* Tooltip */
+        .tooltip {
+            position: relative;
+            display: inline-block;
+            cursor: pointer;
+        }
+
+        .tooltip .tooltiptext {
+            visibility: hidden;
+            width: 120px;
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            border-radius: 6px;
+            padding: 5px 0;
+            position: absolute;
+            z-index: 1;
+            top: 125%;
+            left: 50%;
+            margin-left: -60px;
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+
+        .tooltip:hover .tooltiptext {
+            visibility: visible;
+            opacity: 1;
+        }
+
+     
+        .info, .achievements, .semester-results, .powerpoint-slide, .gallery {
+            margin-top: 30px;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .info h2, .achievements h2, .semester-results h2, .powerpoint-slide h2, .gallery h2 {
+            font-size: 1.5em;
+            margin-bottom: 20px;
+        }
+
+        .subject {
+            margin-bottom: 20px;
+        }
+
+        .subject h3 {
+            font-size: 1.2em;
+            margin-bottom: 10px;
+        }
+
+        .progress-bar {
+            width: 80%;
+            margin: 0 auto 20px;
+            background-color: #f0f0f0;
+            border-radius: 5px;
+        }
+
+        .progress {
+            background-color: #3498db;
+            color: #fff;
+            text-align: center;
+            padding: 10px;
+            border-radius: 5px;
+        }
+
+        .gallery {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .gallery img {
+            max-width: 100%;
+            height: auto;
+            margin: 10px;
+            border-radius: 10px;
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 30px;
+        }
+
+        @media only screen and (max-width: 768px) {
+            .profile-pic {
+                position: static;
+                margin-bottom: 20px;
+            }
+
+            .profile-pic img {
+                width: 80px;
+                height: 80px;
+            }
+
+            .progress-bar {
+                width: 100%;
+            }
+        }
+
+         .congo
+        {
+    font-size: 2em;
+    margin-bottom: 10px;
+    transition: transform 0.3s ease;
+}
+    /* Add transition for smooth zoom effect */
+       
+
+ header p {
+    font-size: 1.2em;
+    margin-bottom: 20px;
+    
+} 
+.congo:hover{
+    transform: scale(1.1);
+
+}
+.profile-pic {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    transition: transform 0.3s ease; /* Add transition for smooth zoom effect */
+} 
+
+.profile-pic img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    border: 2px solid #fff;
+    transition: transform 5s ease; /* Add transition for smooth zoom effect */
+}
+
+
+header:hover .profile-pic img {
+    transform: scale(1.1); /* Zoom in effect */
+}
+
+.btn {
+    background-color: #007bff;
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s ease; /* Add transition for smooth hover effect */
+}
+
+.btn:hover {
+    background-color: #0056b3; /* Darker background on hover */
+}
+
+h2 {
+    
+    transition: transform 0.3s ease; /* Add transition for smooth zoom effect */
+}
+
+h2:hover {
+    transform: scale(1.1); 
+}
+#sem-r{
+    border-radius: 15px 50px 30px;
+    background-color:rgb(192, 224, 64);
+    border: 20px  solid black ;
+    width: 280px;
+    align-items: center;
+    padding: 4px;
+
+}
+#sem-a
+{
+    border-radius: 15px 50px 30px;
+    background-color:turquoise;
+    border: 5px  solid black ;
+    width: 280px;
+    align-items: center;
+    padding: 4px;
+
+}
+
+    </style>
+</head>
+<body>
+    <header>
+        <div class="profile-pic">
+            <img src="your_picture.jpg" alt="Your Picture">
+        </div>
+        <h1 class="congo">Congratulations, Graduate!</h1>
+        <p>You've made it to the finish line.</p>
+       
+    </header>
+    <section class="info">
+        <h2>About Me</h2>
+        <p>As a highly skilled and experienced computer programmer, I am passionate about writing code and developing high-quality software that meets the needs of my clients. My strong background in computer science, coupled with my commitment to using the best programming practices and tools available, makes me a valuable asset to any software development team.</p>
+        <p>Nulla facilisi. Vivamus quis lacus eget leo fringilla finibus.</p>
+        <p> <a href="/cv.txt">
+            <button class="btn">Download</button></a></p>
+    </section>
+    <section class="achievements">
+        <h2>My Achievements</h2>
+        <div class="progress-bar">
+            <div class="progress" style="width: 80%;">80% Graduation Project</div>
+        </div>
+        <div class="progress-bar">
+            <div class="progress" style="width: 90%;">90% Internship Completion</div>
+        </div>
+        <div class="progress-bar">
+            <div class="progress" style="width: 70%;">70% Volunteer Work</div>
+        </div>
+    </section>
+    <section class="semester-results">
+        <h2 id="sem-r">Semester Results</h2>
+        <!-- First Semester -->
+        <section class="semester-results1">
+            <h2 id="sem-a">First Semester</h2>
+            <div class="subject">
+                <!-- <h3>Subject 1</h3> -->
+                <div class="progress-bar">
+                    <div class="progress" style="width: 80%;">Mathematics-1</div>
+                </div>
+            </div>
+            <div class="subject">
+                <!-- <h3>Subject 2</h3> -->
+                <div class="progress-bar">
+                    <div class="progress" style="width: 60%;">EEE</div>
+                </div>
+            </div>
+            <div class="subject">
+                <!-- <h3>Subject 3</h3> -->
+                <div class="progress-bar">
+                    <div class="progress" style="width: 60%;">Inro to c lang</div>
+                </div>
+            </div>
+            <div class="subject">
+                <!-- <h3>Subject 4</h3> -->
+                <div class="progress-bar">
+                    <div class="progress" style="width: 60%;">Graphic Desgining</div>
+                </div>
+            </div>
+            <div class="subject">
+                <!-- <h3>Subject 5</h3> -->
+                <div class="progress-bar">
+                    <div class="progress" style="width: 60%;">ECE</div>
+                </div>
+            </div>
+            <div class="subject">
+                <!-- <h3>Subject 6</h3> -->
+                <div class="progress-bar">
+                    <div class="progress" style="width: 60%;">Tech-English</div>
+                </div>
+            </div>
+            
+        </section>
+        <section class="semester-results2">
+            <h2 id="sem-a">Second Semester</h2>
+            <div class="subject">
+                <!-- <h3>Subject 1</h3> -->
+                <div class="progress-bar">
+                    <div class="progress" style="width: 80%;">Mathematics-2</div>
+                </div>
+            </div>
+            <div class="subject">
+                <!-- <h3>Subject 2</h3> -->
+                <div class="progress-bar">
+                    <div class="progress" style="width: 60%;">Physics-1</div>
+                </div>
+            </div>
+            <div class="subject">
+                <!-- <h3>Subject 3</h3> -->
+                <div class="progress-bar">
+                    <div class="progress" style="width: 60%;">DSA</div>
+                </div>
+            </div>
+            <div class="subject">
+                <!-- <h3>Subject 4</h3> -->
+                <div class="progress-bar">
+                    <div class="progress" style="width: 60%;">c/c++ Lang</div>
+                </div>
+            </div>
+            <div class="subject">
+                <!-- <h3>Subject 5</h3> -->
+                <div class="progress-bar">
+                    <div class="progress" style="width: 60%;">Chemistry</div>
+                </div>
+            </div>
+            <div class="subject">
+                <!-- <h3>Subject 6</h3> -->
+                <div class="progress-bar">
+                    <div class="progress" style="width: 60%;">Workshop</div>
+                </div>
+            </div>
+            
+        </section>
+        <section class="semester-results3">
+            <h2 id="sem-a">Third Semester</h2>
+            <div class="subject">
+                <!-- <h3>Subject 1</h3> -->
+                <div class="progress-bar">
+                    <div class="progress" style="width: 80%;">OOPs</div>
+                </div>
+            </div>
+            <div class="subject">
+                <!-- <h3>Subject 2</h3> -->
+                <div class="progress-bar">
+                    <div class="progress" style="width: 60%;">DAA</div>
+                </div>
+            </div>
+            <div class="subject">
+                <!-- <h3>Subject 3</h3> -->
+                <div class="progress-bar">
+                    <div class="progress" style="width: 60%;">Engeneering Mechanics</div>
+                </div>
+            </div>
+            <div class="subject">
+                <!-- <h3>Subject 4</h3> -->
+                <div class="progress-bar">
+                    <div class="progress" style="width: 60%;">Mathematics-3</div>
+                </div>
+            </div>
+            <div class="subject">
+                <!-- <h3>Subject 5</h3> -->
+                <div class="progress-bar">
+                    <div class="progress" style="width: 60%;">Mattlab</div>
+                </div>
+            </div>
+            <div class="subject">
+                <!-- <h3>Subject 6</h3> -->
+                <div class="progress-bar">
+                    <div class="progress" style="width: 60%;">Sanskrit</div>
+                </div>
+            </div>
+            
+        </section>
+        <section class="semester-results4">
+            <h2 id="sem-a">Fourth Semester</h2>
+            <div class="subject">
+                <!-- <h3>Subject 1</h3> -->
+                <div class="progress-bar">
+                    <div class="progress" style="width: 80%;">Discrete-Mathematics</div>
+                </div>
+            </div>
+            <div class="subject">
+                <!-- <h3>Subject 2</h3> -->
+                <div class="progress-bar">
+                    <div class="progress" style="width: 60%;">C-O-A</div>
+                </div>
+            </div>
+            <div class="subject">
+                <!-- <h3>Subject 3</h3> -->
+                <div class="progress-bar">
+                    <div class="progress" style="width: 60%;">O-S</div>
+                </div>
+            </div>
+            <div class="subject">
+                <!-- <h3>Subject 4</h3> -->
+                <div class="progress-bar">
+                    <div class="progress" style="width: 60%;">Webtechnology</div>
+                </div>
+            </div>
+            <div class="subject">
+                <!-- <h3>Subject 5</h3> -->
+                <div class="progress-bar">
+                    <div class="progress" style="width: 60%;">Java</div>
+                </div>
+            </div>
+            <div class="subject">
+                <!-- <h3>Subject 6</h3> -->
+                <div class="progress-bar">
+                    <div class="progress" style="width: 60%;">Enterpreneurship</div>
+                </div>
+            </div>
+            
+        </section>
+        <!-- Add more semester sections as needed -->
+    </section>
+    <section class="powerpoint-slide">
+        <h2>Professional Skills</h2>
+        <div class="slide-content">
+            <div class="slide">
+                <h3>Leadership</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vestibulum erat nec lacus fringilla.</p>
+            </div>
+            <div class="slide">
+                <h3>Communication</h3>
+                <p>Vivamus quis lacus eget leo fringilla finibus. Nullam sit amet ante eget nunc consectetur fermentum.</p>
+            </div>
+            <div class="slide">
+                <h3>Problem Solving</h3>
+                <p>Integer convallis odio nec magna lacinia ultricies. Nam efficitur aliquam augue, nec tempus elit.</p>
+            </div>
+        </div>
+    </section>
+    <section class="gallery">
+        <h2>Graduation Memories</h2>
+        <img src="graduation1.jpg" alt="Graduation Photo 1">
+        <img src="graduation2.jpg" alt="Graduation Photo 2">
+        <img src="graduation3.jpg" alt="Graduation Photo 3">
+    </section>
+    <footer>
+        <p>&copy; 2024 Graduation Student Landing Page. All rights reserved.</p>
+    </footer>
+    
+</body>
+</html>
