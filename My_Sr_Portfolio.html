@@ -68,18 +68,7 @@
             margin-bottom: 20px;
         }
 
-        .profile-pic {
-            position: absolute;
-            top: 20px;
-            right: 20px;
-        }
-
-       .profile-pic img {
-            width: 100px;
-            height: 100px;
-            border-radius: 50%;
-            border: 2px solid #fff;
-        }
+       
 
         
      
@@ -144,19 +133,7 @@
         grid-gap: 10px; 
     }
 
-            .profile-pic {
-                position: static;
-                margin-bottom: 20px;
-            }
-
-            .profile-pic img {
-                width: 80px;
-                height: 80px;
-            }
-
-            .progress-bar {
-                width: 100%;
-            }
+           
         }
 
          .congo
@@ -165,7 +142,11 @@
     margin-bottom: 10px;
     transition: transform 0.3s ease;
 }
-    
+@media only screen and (max-width: 768px) {
+    .congo {
+        font-size: 1.5em;
+    }
+}
        
 
  header p {
@@ -190,18 +171,27 @@
     border-radius: 50%;
     border: 2px solid #fff;
     transition: transform 5s ease; 
-}
+} 
+
 
 
 header:hover .profile-pic img {
     transform: scale(1.1); 
 }
+@media only screen and (max-width: 783px) {
+            
+            .profile-pic img {
+                
+                width: 50px;
+                height: 50px;
+            }
+        }
 
 
 
 h2 {
     
-    transition: transform 0.3s ease; /* Add transition for smooth zoom effect */
+    transition: transform 0.3s ease; 
 }
 
 h2:hover {
@@ -268,7 +258,7 @@ a:hover{
     
 }
 
-/* Add your existing CSS styles here */
+
 
 .navbar ul {
     overflow: auto;
@@ -296,11 +286,7 @@ a:hover{
     font-family: cursive;
 }
 
-.navbar input[type="text"] {
-    border: 1px solid black;
-    border-radius: 14px;
-    padding: 6px 10px;
-}
+
 
 
 @media only screen and (max-width: 768px) {
@@ -318,11 +304,9 @@ a:hover{
         margin: 10px auto;
     }
 
-    .navbar input[type="text"] {
-        display: block;
-        margin: 10px auto;
-    }
+    
 }
+
 
 
     </style>
@@ -330,12 +314,13 @@ a:hover{
 <body>
     <header>
         <nav class="navbar" id="navbar">
-           <li> <a href="#about">About Me</a></li>
+          <ul> <li> <a href="#about">About Me</a></li>
            <li><a href="#achievements">Achievements</a></li>
            <li><a href="#results">Semester Results</a></li>
            <li> <a href="#skills">Professional Skills</a></li>
            <li>  <a href="#certificates">Certificates</a></li>
            <li> <a href="#gallery">Social-Work</a></li>
+        </ul>
         </nav>
     </header>
     <header>
