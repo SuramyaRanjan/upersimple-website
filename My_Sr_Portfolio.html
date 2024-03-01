@@ -268,38 +268,60 @@ a:hover{
     
 }
 
-.navbar ul{
-    
+/* Add your existing CSS styles here */
+
+.navbar ul {
     overflow: auto;
+    padding: 0;
 }
-.navbar li{
-    float: left;
+
+.navbar li {
     list-style: none;
-    padding: 3px 3px;
-    margin: 10px 25px;
-    padding-top: 8px;
-    
-
+    display: inline-block;
+    padding: 3px;
+    margin: 10px 5px;
 }
-.navbar li a{
+
+.navbar li a {
     background-color: rgb(236, 167, 236);
-    padding: 4px 4px;
-    text-decoration: wavy;
+    padding: 8px 12px;
+    text-decoration: none;
     color: rgb(62, 59, 55);
-
 }
-.navbar li a:hover{
-    padding: 3px 3px;
+
+.navbar li a:hover {
+    padding: 8px 12px;
     text-decoration: dashed;
     color: rgb(7, 11, 0);
     font-family: cursive;
-
 }
-.navbar input{
-    border: 9px solid black;
-    border: radius 14px; 
-    padding: 3px 10px;
 
+.navbar input[type="text"] {
+    border: 1px solid black;
+    border-radius: 14px;
+    padding: 6px 10px;
+}
+
+
+@media only screen and (max-width: 768px) {
+    .navbar {
+        text-align: center;
+    }
+
+    .navbar ul {
+        display: block;
+        text-align: center;
+    }
+
+    .navbar li {
+        display: block;
+        margin: 10px auto;
+    }
+
+    .navbar input[type="text"] {
+        display: block;
+        margin: 10px auto;
+    }
 }
 
 
