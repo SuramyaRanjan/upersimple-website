@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Calculator</title>
+<style>
+    body {
+        
+        font-family: Arial, sans-serif;
+        
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        height: 100vh;
+        margin: 0;
+        background:linear-gradient(to bottom,#33ccff 0%,#ff99cc 100%);
+    }
+
+    .calculator {
+        padding-top: 25px;
+        margin-top: 14.5rem;
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        grid-gap: 5px;
+        background-color: #e2c64d;
+        border-radius: 5px;
+        box-shadow: 40px 40px rgb(68, 74, 77) ;
+
+        padding: 20px;
+    }
+
+    .calculator input[type="text"] {
+        grid-column: span 4;
+        margin-bottom: 10px;
+        padding: 10px;
+        font-size: 18px;
+        border-style: double;
+        border-width: 4px;
+        border-radius: 5px;
+        background-color: rgb(187, 239, 239);
+    }
+
+    .calculator button {
+        width: 100%;
+        height: 45px;
+        font-size: 18px;
+        border: none;
+        border-radius: 15px 50px 30px;
+        cursor: pointer;
+        transition: background-color 0.3s;
+        box-shadow: 10px 10px rgb(112, 142, 157) ;
+    }
+
+    .calculator button:hover {
+        background-color: #56cd2e;
+        font-size: 150%;
+    }
+
+   
+
+    .manual {
+        margin-top: 20px;
+        padding: 10px;
+        background-color: #f0f0f0;
+        border-radius: 5px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .manual h2 {
+        margin-top: 0;
+        font-size: 20px;
+    }
+
+    .manual p {
+        margin-bottom: 10px;
+        line-height: 1.5;
+    }
+    mark{
+        
+        background-color: rgb(207, 232, 175);
+        color: rgb(17, 17, 17);
+        text-decoration: underline;
+    }
+    #water{
+        font-size: 1.1rem;
+        border: 4px solid black;
+        padding: 1.2em;;
+    }
+   
+@media only screen and (max-width: 600px) {
+    .calculator {
+        width: 90%;
+        max-width: 300px; 
+    }
+
+    .calculator button {
+        height: 40px;
+        font-size: 16px;
+    }
+
+    .manual {
+        width: 90%;
+        max-width: 300px; 
+    }
+}
+
+
+@media only screen and (min-width: 601px) {
+    .calculator {
+        width: 60%;
+        max-width: 600px; 
+    }
+
+    .manual {
+        width: 60%;
+        max-width: 600px; 
+    }
+}
+
+</style>
+</head>
+<body>
+
+
+    
+<div class="calculator">
+    <input type="text" id="display" value="|_||_||_||_||_||_||_||_||_||_||_||_|" readonly>
+    <button onclick="clearDisplay()" class="button-effect">C</button>
+    <button onclick="backspace()" class="button-effect">←</button>
+    <button onclick="appendToDisplay('7')" class="button-effect">7</button>
+    <button onclick="appendToDisplay('8')" class="button-effect">8</button>
+    <button onclick="appendToDisplay('9')" class="button-effect">9</button>
+    <button onclick="appendToDisplay('/')" class="button-effect">/</button>
+    <button onclick="appendToDisplay('4')" class="button-effect">4</button>
+    <button onclick="appendToDisplay('5')" class="button-effect">5</button>
+    <button onclick="appendToDisplay('6')" class="button-effect">6</button>
+    <button onclick="appendToDisplay('*')" class="button-effect">*</button>
+    <button onclick="appendToDisplay('1')" class="button-effect">1</button>
+    <button onclick="appendToDisplay('2')" class="button-effect">2</button>
+    <button onclick="appendToDisplay('3')" class="button-effect">3</button>
+    <button onclick="appendToDisplay('-')" class="button-effect">-</button>
+    
+    <button onclick="appendToDisplay('.')" class="button-effect">.</button>
+    <button onclick="calculate('=')" class="button-effect">=</button>
+    <button onclick="appendToDisplay('0')" class="button-effect">0</button>
+    <button onclick="appendToDisplay('+')" class="button-effect operator">+</button>
+    
+</div>
+
+<div class="manual">
+    <h2>How To Use</h2>
+    <p><mark>Basic Usage:</mark> Use the mouse or your keyboard to input numbers and operators. Press "C" to clear the display, "=" to calculate  and "Enter" to calculate as well.</p>
+    <p><mark>Keyboard Shortcuts:</mark></p>
+    <ul>
+        <li><mark >Numbers (0-9):</mark> Type the number keys to input the respective numbers.</li>
+        <li><mark>Operators (+, -, *, /):</mark> Type the operator keys to input the respective operators.</li>
+        <li><mark>Enter:</mark> Calculate the result.</li>
+        <li><mark>Escape:</mark> Clear the display.</li>
+        <li><mark>Backspace:</mark>Delete one element.(Note it will not take one step backward)</li>
+        <li><mark>CAUTION:</mark>If using keybord buttons avoid placing mouse cursor. <br>This is a basic calculator uncapable of various functions and complex calculation.</li>
+        <p id="water">"&copy; Suramya Ranjan" The work is done by me solely.Although ideas and mapping is done through contents available over the internet,you-tube etc"</p>
+    </ul>
+</div>
+
+
+<script>
+    alert("Press 'C' to clear the display");
+    document.addEventListener('keydown', function(event) {
+        const key = event.key;
+
+        if (key >= '0' && key <= '9' || key === '.' || key === '+' || key === '-' || key === '*' || key === '/') {
+            appendToDisplay(key);
+        } 
+        else if (key === 'Enter' || key === '=') 
+        {
+            calculate();
+        } 
+        else if (key === 'Escape')
+         {
+            clearDisplay();
+            
+        }
+        else if (key === 'c' || key === 'C')
+         { 
+            clearDisplay();
+        }
+        
+        else if (key === 'Backspace') 
+        {
+            backspace();
+        }
+    });
+
+    function appendToDisplay(value) {
+        const display = document.getElementById("display");
+        if (display.value === '0' && value !== '.') {
+            display.value = value;
+        } else {
+            display.value += value;
+        }
+    }
+
+    function clearDisplay() {
+        document.getElementById("display").value = '0';
+    }
+
+    function backspace() {
+        const display = document.getElementById("display");
+        display.value = display.value.slice(0, -1);
+        if (display.value === '') {
+            display.value = '0';
+        }
+    }
+
+    function calculate() {
+        let expression = document.getElementById("display").value;
+        let result = eval(expression);
+        document.getElementById("display").value = result;
+    }
+</script>
+
+    
+</script>
+</body>
+</html>
