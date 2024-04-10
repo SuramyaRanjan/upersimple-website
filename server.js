@@ -8,7 +8,7 @@ const Port=process.env.Port || 4000
 http.listen(Port,()=>{
     console.log(`Listening on port ${Port}`)
 })
-app.use(express.static(__dirname+'/public'))
+app.use(express.static(__dirname+'/https://github.com/SuramyaRanjan/upersimple-website/'))
 
 app.get('/',(req,res) =>{
     res.sendFile(__dirname + '/index.html')
