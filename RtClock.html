@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clock</title>
+    <style>
+         body {
+            font-family: Arial, Helvetica, sans-serif;
+            background-color: #333;
+            animation: colorCycle 25s infinite alternate; /* Adjust timing here */
+            
+        }
+
+        @keyframes colorCycle {
+            0% { background-color: #333; }
+            10% { background-color: #ef671e; }
+            20% { background-color: #be8f29; }
+            30% { background-color: #eff251; }
+            40% { background-color: #fafa12; }
+            50% { background-color: #ecf40e; }
+            60% { background-color: #f1fc15; }
+            70% { background-color: #e2c105; }
+            80% { background-color: #9e7006; }
+            90% { background-color: #3f1d03; }
+            100% { background-color: #141313; }
+        }
+        .dial {
+            width: 500px;
+            height: 500px;
+            border: 20px solid rgb(57, 3, 34);
+            background: radial-gradient(circle, rgb(157, 181, 212) 0%, rgb(232, 238, 166) 50%, rgb(121, 91, 91) 100%);
+            border-radius: 50%;
+            margin: 50px auto;
+            position: relative;
+            z-index: -1;
+        }
+        .brand-container {
+            position: absolute;
+            bottom: 100px; /* Adjusted position */
+            left: 50%;
+            transform: translateX(-50%);
+            text-align: center;
+            z-index: 1; /* Ensure it's above the clock hands */
+        }
+        .brand-name {
+            font-size: 24px;
+            font-weight: bold;
+            color: rgb(85, 9, 118);
+        }
+        .point {
+            width: 25px;
+            height: 25px;
+            background-color: rgb(16, 16, 16);
+            border-radius: 50%;
+            position: absolute;
+            top: 240px;
+            left: 240px;
+            z-index: 10;
+        }
+        .hour {
+            font-size: 30px;
+            font-weight: bold;
+            color: black;
+            position: absolute;
+            transform-origin: center bottom;
+        }
+        /* Positioning each hour */
+        .hour-1 { top: 40px; right: 130px; }
+.hour-2 { top: 125px; right: 45px; }
+.hour-3 { top: 235px;right : 10px; }
+.hour-4 { top: 345px; right: 45px; }
+.hour-5 { top: 430px; right: 130px; }
+.hour-6 { bottom: 10px; left: 240px; }
+.hour-7 { top: 430px; left: 130px; }
+.hour-8 { top: 345px; left: 45px; }
+.hour-9 { top: 235px; left: 10px; }
+.hour-10 { top: 125px; left: 45px; }
+.hour-11 { top: 40px; left: 130px; }
+.hour-12 { top: 10px; right: 235px; }
+        /* Hour hand */
+        .hour-hand {
+            width: 8px;
+            height: 150px;
+            background-color: black;
+            position: absolute;
+            top: 19%;
+            left: calc(55% - 20px);
+            transform-origin: bottom;
+            z-index: 2;
+        }
+        /* Minute hand */
+        .minute-hand {
+            width: 4px;
+            height: 180px;
+            background-color: black;
+            position: absolute;
+            top: 14%;
+            left: calc(50% - 3px);
+            transform-origin: bottom;
+            z-index: 3;
+        }
+        /* Second hand */
+        .second-hand {
+            width: 2px;
+            height: 190px;
+            background-color: red;
+            position: absolute;
+            top: 13%;
+            left: calc(50% - 6px);
+            transform-origin: bottom;
+            z-index: 4;
+        }
+        /* Minute dots */
+        .minute-dot {
+            width: 4px;
+            height: 4px;
+            background-color: black;
+            border-radius: 50%;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform-origin: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="dial">
+        <div class="point" id="point"></div>
+        <div class="hour hour-1">1</div>
+        <div class="hour hour-2">2</div>
+        <div class="hour hour-3">3</div>
+        <div class="hour hour-4">4</div>
+        <div class="hour hour-5">5</div>
+        <div class="hour hour-6">6</div>
+        <div class="hour hour-7">7</div>
+        <div class="hour hour-8">8</div>
+        <div class="hour hour-9">9</div>
+        <div class="hour hour-10">10</div>
+        <div class="hour hour-11">11</div>
+        <div class="hour hour-12">12</div>
+        <div class="hour-hand" id="hour-hand"></div>
+        <div class="minute-hand" id="minute-hand"></div>
+        <div class="second-hand" id="second-hand"></div>
+        <div class="brand-container">
+            <div class="brand-name">@Suramya Ranjan
+                <br>All rights reserved.
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function createMinuteDots() {
+            const dial = document.querySelector('.dial');
+            for (let i = 0; i < 60; i++) {
+                const minuteDot = document.createElement('div');
+                minuteDot.classList.add('minute-dot');
+                const angle = (i * 6) - 90; // Start from top
+                const radius = 245; // Adjusted distance from the center
+                const x = radius * Math.cos(angle * Math.PI / 180);
+                const y = radius * Math.sin(angle * Math.PI / 180);
+                minuteDot.style.left = `${250 + x}px`; // Center (250, 250) + x
+                minuteDot.style.top = `${250 + y}px`; // Center (250, 250) + y
+                dial.appendChild(minuteDot);
+            }
+        }
+
+        createMinuteDots(); // Create minute dots
+
+        function updateClock() {
+            const now = new Date();
+            const hours = now.getHours() % 12; // Ensure 12-hour format
+            const minutes = now.getMinutes();
+            const seconds = now.getSeconds();
+
+            // Update hour hand
+            const hourHand = document.getElementById('hour-hand');
+            const hourDegrees = (hours * 30) + (0.5 * minutes); // 30 degrees per hour, 0.5 degrees per minute
+            hourHand.style.transform = `rotate(${hourDegrees}deg)`;
+
+            // Update minute hand
+            const minuteHand = document.getElementById('minute-hand');
+            const minuteDegrees = (minutes * 6) + (0.1 * seconds); // 6 degrees per minute, 0.1 degrees per second
+            minuteHand.style.transform = `rotate(${minuteDegrees}deg)`;
+
+            // Update second hand
+            const secondHand = document.getElementById('second-hand');
+            const secondDegrees = seconds * 6; // 6 degrees per second
+            secondHand.style.transform = `rotate(${secondDegrees}deg)`;
+
+            setTimeout(updateClock, 1000); // Update every second
+        }
+
+        updateClock(); // Initial call to start the clock
+    </script>
+</body>
+</html>
